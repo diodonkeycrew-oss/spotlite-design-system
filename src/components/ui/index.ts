@@ -11,5 +11,9 @@ export type { TypographyProps, TypographyVariantProps } from './typography'
 // Card 관련
 export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from './card'
 
+// Input 관련
+export { Input, inputVariants } from './input'
+export type { InputProps, InputVariantProps, InputVariant, InputSize } from './input'
+
 // 기타 shadcn 컴포넌트들
 export { Badge } from './badge'
