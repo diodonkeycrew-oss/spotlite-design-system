@@ -8,7 +8,7 @@ const meta: Meta<typeof Button> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'shadcn/ui Button 컴포넌트입니다. 다양한 variant와 size 옵션을 제공합니다.',
+        component: 'Spotlite 디자인 시스템의 shadcn/ui Button 컴포넌트입니다. MUI 테마와 매칭된 커스텀 variant와 size 옵션을 제공합니다.',
       },
     },
   },
@@ -16,12 +16,12 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'],
+      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link', 'spotlite', 'spotliteLogin', 'line', 'lineDisconnect', 'search', 'searchSelected', 'option', 'optionSelected'],
       description: '버튼의 스타일 variant',
     },
     size: {
       control: { type: 'select' },
-      options: ['default', 'sm', 'lg', 'icon'],
+      options: ['default', 'sm', 'lg', 'icon', 'xlarge'],
       description: '버튼의 크기',
     },
     disabled: {
@@ -34,59 +34,136 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+// 기본 shadcn 버튼들
+export const Primary: Story = {
   args: {
     variant: 'default',
-    children: 'Button',
+    children: 'Primary Button',
   },
 };
 
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
-    children: 'Secondary',
+    children: 'Secondary Button',
   },
 };
 
-export const Destructive: Story = {
-  args: {
-    variant: 'destructive',
-    children: 'Destructive',
-  },
-};
-
-export const Outline: Story = {
+export const Outlined: Story = {
   args: {
     variant: 'outline',
-    children: 'Outline',
+    children: 'Outlined Button',
   },
 };
 
 export const Ghost: Story = {
   args: {
     variant: 'ghost',
-    children: 'Ghost',
+    children: 'Ghost Button',
   },
 };
 
 export const Link: Story = {
   args: {
     variant: 'link',
-    children: 'Link',
+    children: 'Link Button',
   },
 };
 
+export const Destructive: Story = {
+  args: {
+    variant: 'destructive',
+    children: 'Destructive Button',
+  },
+};
+
+// Spotlite 커스텀 버튼들
+export const Spotlite: Story = {
+  args: {
+    variant: 'spotlite',
+    children: 'Spotlite Button',
+  },
+};
+
+export const SpotliteLogin: Story = {
+  args: {
+    variant: 'spotliteLogin',
+    children: 'Spotlite Login',
+  },
+};
+
+export const Line: Story = {
+  args: {
+    variant: 'line',
+    children: 'Line Connect',
+  },
+};
+
+export const LineDisconnect: Story = {
+  args: {
+    variant: 'lineDisconnect',
+    children: 'Line Disconnect',
+  },
+};
+
+export const Search: Story = {
+  args: {
+    variant: 'search',
+    children: 'Search',
+  },
+};
+
+export const SearchSelected: Story = {
+  args: {
+    variant: 'searchSelected',
+    children: 'Search Selected',
+  },
+};
+
+export const Option: Story = {
+  args: {
+    variant: 'option',
+    children: 'Option',
+  },
+};
+
+export const OptionSelected: Story = {
+  args: {
+    variant: 'optionSelected',
+    children: 'Option Selected',
+  },
+};
+
+// 크기별 버튼들
 export const Small: Story = {
   args: {
     size: 'sm',
-    children: 'Small',
+    variant: 'default',
+    children: 'Small Button',
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    size: 'default',
+    variant: 'default',
+    children: 'Medium Button',
   },
 };
 
 export const Large: Story = {
   args: {
     size: 'lg',
-    children: 'Large',
+    variant: 'default',
+    children: 'Large Button',
+  },
+};
+
+export const XLarge: Story = {
+  args: {
+    size: 'xlarge',
+    variant: 'default',
+    children: 'XLarge Button',
   },
 };
 
@@ -97,9 +174,19 @@ export const Icon: Story = {
   },
 };
 
+// 상태별 버튼들
 export const Disabled: Story = {
   args: {
     disabled: true,
-    children: 'Disabled',
+    variant: 'default',
+    children: 'Disabled Button',
+  },
+};
+
+export const DisabledSpotlite: Story = {
+  args: {
+    disabled: true,
+    variant: 'spotlite',
+    children: 'Disabled Spotlite',
   },
 };

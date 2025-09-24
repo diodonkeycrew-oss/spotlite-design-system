@@ -8,7 +8,7 @@ const meta: Meta<typeof Button> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Material-UI Button 컴포넌트입니다. 다양한 variant와 color 옵션을 제공합니다.',
+        component: 'Spotlite 디자인 시스템의 Material-UI Button 컴포넌트입니다. 커스텀 variant와 color 옵션을 제공합니다.',
       },
     },
   },
@@ -16,17 +16,17 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['text', 'outlined', 'contained'],
+      options: ['text', 'outlined', 'contained', 'spotlite', 'spotliteLogin', 'line', 'lineDisconnect', 'search', 'searchSelected', 'option', 'optionSelected'],
       description: '버튼의 스타일 variant',
     },
     color: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'error', 'info', 'success', 'warning'],
+      options: ['primary', 'secondary', 'error', 'info', 'success', 'warning', 'negative', 'accent', 'minor'],
       description: '버튼의 색상',
     },
     size: {
       control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
+      options: ['small', 'medium', 'large', 'xlarge'],
       description: '버튼의 크기',
     },
     disabled: {
@@ -39,6 +39,7 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// 기본 MUI 버튼들
 export const Primary: Story = {
   args: {
     variant: 'contained',
@@ -71,15 +72,65 @@ export const Text: Story = {
   },
 };
 
-export const Large: Story = {
+// Spotlite 커스텀 버튼들
+export const Spotlite: Story = {
   args: {
-    size: 'large',
-    variant: 'contained',
+    variant: 'spotlite',
     color: 'primary',
-    children: 'Large Button',
+    children: 'Spotlite Button',
   },
 };
 
+export const SpotliteLogin: Story = {
+  args: {
+    variant: 'spotliteLogin',
+    children: 'Spotlite Login',
+  },
+};
+
+export const Line: Story = {
+  args: {
+    variant: 'line',
+    children: 'Line Connect',
+  },
+};
+
+export const LineDisconnect: Story = {
+  args: {
+    variant: 'lineDisconnect',
+    children: 'Line Disconnect',
+  },
+};
+
+export const Search: Story = {
+  args: {
+    variant: 'search',
+    children: 'Search',
+  },
+};
+
+export const SearchSelected: Story = {
+  args: {
+    variant: 'searchSelected',
+    children: 'Search Selected',
+  },
+};
+
+export const Option: Story = {
+  args: {
+    variant: 'option',
+    children: 'Option',
+  },
+};
+
+export const OptionSelected: Story = {
+  args: {
+    variant: 'optionSelected',
+    children: 'Option Selected',
+  },
+};
+
+// 크기별 버튼들
 export const Small: Story = {
   args: {
     size: 'small',
@@ -89,11 +140,73 @@ export const Small: Story = {
   },
 };
 
+export const Medium: Story = {
+  args: {
+    size: 'medium',
+    variant: 'contained',
+    color: 'primary',
+    children: 'Medium Button',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    size: 'large',
+    variant: 'contained',
+    color: 'primary',
+    children: 'Large Button',
+  },
+};
+
+export const XLarge: Story = {
+  args: {
+    size: 'xlarge',
+    variant: 'contained',
+    color: 'primary',
+    children: 'XLarge Button',
+  },
+};
+
+// 색상별 버튼들
+export const Accent: Story = {
+  args: {
+    variant: 'contained',
+    color: 'accent',
+    children: 'Accent Button',
+  },
+};
+
+export const Negative: Story = {
+  args: {
+    variant: 'contained',
+    color: 'negative',
+    children: 'Negative Button',
+  },
+};
+
+export const Minor: Story = {
+  args: {
+    variant: 'outlined',
+    color: 'minor',
+    children: 'Minor Button',
+  },
+};
+
+// 상태별 버튼들
 export const Disabled: Story = {
   args: {
     disabled: true,
     variant: 'contained',
     color: 'primary',
     children: 'Disabled Button',
+  },
+};
+
+export const DisabledSpotlite: Story = {
+  args: {
+    disabled: true,
+    variant: 'spotlite',
+    color: 'primary',
+    children: 'Disabled Spotlite',
   },
 };

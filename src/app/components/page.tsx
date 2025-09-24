@@ -1,44 +1,39 @@
-import { Container, Typography, Box, Grid, Card, CardContent, Button } from '@mui/material'
-import { Add, Edit, Delete } from '@mui/icons-material'
+'use client'
+
+import { SpotliteButtonExamples } from '@/components/examples/SpotliteButton'
+import { SpotliteTypographyExamples } from '@/components/examples/SpotliteTypography'
 
 export default function ComponentsPage() {
-  const components = [
-    { name: 'Button', description: '다양한 스타일의 버튼 컴포넌트', icon: <Add /> },
-    { name: 'Input', description: '폼 입력을 위한 입력 필드', icon: <Edit /> },
-    { name: 'Card', description: '콘텐츠를 담는 카드 컴포넌트', icon: <Delete /> },
-  ]
-
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Typography variant="h3" component="h1" gutterBottom>
-        컴포넌트 라이브러리
-      </Typography>
-      <Typography variant="body1" color="text.secondary" paragraph>
-        재사용 가능한 UI 컴포넌트들을 탐색하고 사용해보세요.
-      </Typography>
+    <div className="container mx-auto py-8 px-4">
+      <div className="space-y-8">
+        <div>
+          <h1 className="text-4xl font-semibold mb-4">컴포넌트 라이브러리</h1>
+          <p className="text-base font-normal">
+            재사용 가능한 UI 컴포넌트들을 탐색하고 사용해보세요. MUI 테마와 Tailwind/shadcn이 완벽하게 매칭되어 있습니다.
+          </p>
+        </div>
 
-      <Grid container spacing={3} sx={{ mt: 2 }}>
-        {components.map((component, index) => (
-          <Grid item xs={12} md={4} key={index}>
-            <Card sx={{ height: '100%' }}>
-              <CardContent>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                  {component.icon}
-                  <Typography variant="h6" sx={{ ml: 1 }}>
-                    {component.name}
-                  </Typography>
-                </Box>
-                <Typography variant="body2" color="text.secondary" paragraph>
-                  {component.description}
-                </Typography>
-                <Button variant="outlined" size="small">
-                  보기
-                </Button>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+        <div className="space-y-12">
+          <SpotliteTypographyExamples />
+          <SpotliteButtonExamples />
+        </div>
+
+        <div className="mt-12 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-4">사용법 가이드</h2>
+          <div className="space-y-4 text-base font-normal">
+            <p>
+              <strong>1. Tailwind 클래스 사용:</strong> 모든 MUI 테마 값들이 Tailwind 클래스로 매핑되어 있습니다.
+            </p>
+            <p>
+              <strong>2. shadcn 컴포넌트 사용:</strong> <code className="bg-muted px-2 py-1 rounded">Button</code>, <code className="bg-muted px-2 py-1 rounded">Card</code> 등 shadcn 기본 컴포넌트를 사용하여 일관된 스타일을 적용할 수 있습니다.
+            </p>
+            <p>
+              <strong>3. CSS 변수:</strong> 모든 색상과 스타일이 CSS 변수로 정의되어 다크 모드와 라이트 모드를 지원합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }

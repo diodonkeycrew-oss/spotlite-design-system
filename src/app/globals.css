@@ -5,48 +5,94 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    /* shadcn 기본 색상 - theme.ts와 정확히 매칭 */
+    --background: 0 0% 100%; /* #ffffff - theme.palette.background.default */
+    --foreground: 0 0% 0%; /* #000000 - theme.palette.text.primary */
+    --card: 0 0% 100%; /* #ffffff - theme.palette.background.default */
+    --card-foreground: 0 0% 0%; /* #000000 - theme.palette.text.primary */
+    --popover: 0 0% 100%; /* #ffffff - theme.palette.background.default */
+    --popover-foreground: 0 0% 0%; /* #000000 - theme.palette.text.primary */
+    --primary: 0 0% 0%; /* #000000 - theme.palette.primary.main */
+    --primary-foreground: 0 0% 100%; /* #ffffff - theme.palette.primary.contrastText */
+    --secondary: 240 100% 97%; /* #EDEEFC - theme.palette.secondary.main */
+    --secondary-foreground: 235 100% 60%; /* #5058E3 - theme.palette.secondary.contrastText */
+    --muted: 240 100% 97%; /* #EDEEFC - theme.palette.secondary.main */
+    --muted-foreground: 0 0% 35%; /* #5A5A5A - theme.palette.text.secondary */
+    --accent: 235 100% 60%; /* #5058e3 - theme.palette.accent.main */
+    --accent-foreground: 0 0% 100%; /* #ffffff - theme.palette.accent.contrastText */
+    --destructive: 0 100% 50%; /* #ff0000 - theme.palette.error.main */
+    --destructive-foreground: 0 0% 100%; /* #ffffff */
+    --border: 0 0% 88%; /* #E1E1E1 - theme.palette.spotliteLightGrey.main */
+    --input: 0 0% 88%; /* #E1E1E1 - theme.palette.spotliteLightGrey.main */
+    --ring: 235 100% 60%; /* #5058E3 - theme.palette.accent.main */
+    --radius: 0.75rem; /* MUI 테마의 SPOTLITE_BORDER_RADIUS와 매칭 */
+
+    /* Spotlite 커스텀 색상 (theme.ts에서 정확히 매핑) */
+    --spotlite-text-primary: 0 0% 0%; /* #000000 - theme.palette.spotliteText.primary */
+    --spotlite-text-secondary: 0 0% 35%; /* #5A5A5A - theme.palette.spotliteText.secondary */
+    --spotlite-light-grey: 0 0% 88%; /* #E1E1E1 - theme.palette.spotliteLightGrey.main */
+    --spotlite-light-grey-light: 0 0% 88% / 0.2; /* rgba(225, 225, 225, 0.2) - theme.palette.spotliteLightGrey.light */
+    --spotlite-floating-bg: 0 0% 0% / 0.8; /* rgba(0, 0, 0, 0.8) - theme.palette.spotliteFloatingBg.main */
+
+    /* MUI 테마 색상 정확한 매핑 */
+    --minor: 0 0% 95%; /* #F1F1F1 - theme.palette.minor.main */
+    --minor-foreground: 0 0% 0%; /* #000000 */
+    --negative: 4 90% 58%; /* #D32F2F - theme.palette.negative.main */
+    --negative-foreground: 0 0% 100%; /* #ffffff - theme.palette.negative.contrastText */
+    --line: 142 100% 40%; /* #06C755 - theme.palette.line.main */
+    --line-dark: 142 100% 32%; /* #05a84e - theme.palette.line.dark */
+    --line-foreground: 0 0% 100%; /* #ffffff - theme.palette.line.contrastText */
+    --highlight: 60 100% 80%; /* #FFFF99 - theme.palette.highLight.main */
+    --warning-light: 54 100% 92%; /* #FEF8D4 - theme.palette.warning.light */
+    --warning: 54 100% 50%; /* #FFDA00 - theme.palette.warning.main */
+    --warning-dark: 54 100% 50%; /* #FFDA00 - theme.palette.warning.main */
+    --success: 235 100% 60%; /* #5058e3 - theme.palette.success.main */
+    --info: 235 100% 60%; /* #5058e3 - theme.palette.info.main */
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 94.1%;
+    /* 다크 모드 - theme.ts 기반 (현재는 라이트 모드만 지원하므로 라이트 모드와 동일) */
+    --background: 0 0% 100%; /* #ffffff - theme.palette.background.default */
+    --foreground: 0 0% 0%; /* #000000 - theme.palette.text.primary */
+    --card: 0 0% 100%; /* #ffffff - theme.palette.background.default */
+    --card-foreground: 0 0% 0%; /* #000000 - theme.palette.text.primary */
+    --popover: 0 0% 100%; /* #ffffff - theme.palette.background.default */
+    --popover-foreground: 0 0% 0%; /* #000000 - theme.palette.text.primary */
+    --primary: 0 0% 0%; /* #000000 - theme.palette.primary.main */
+    --primary-foreground: 0 0% 100%; /* #ffffff - theme.palette.primary.contrastText */
+    --secondary: 240 100% 97%; /* #EDEEFC - theme.palette.secondary.main */
+    --secondary-foreground: 235 100% 60%; /* #5058E3 - theme.palette.secondary.contrastText */
+    --muted: 240 100% 97%; /* #EDEEFC - theme.palette.secondary.main */
+    --muted-foreground: 0 0% 35%; /* #5A5A5A - theme.palette.text.secondary */
+    --accent: 235 100% 60%; /* #5058e3 - theme.palette.accent.main */
+    --accent-foreground: 0 0% 100%; /* #ffffff - theme.palette.accent.contrastText */
+    --destructive: 0 100% 50%; /* #ff0000 - theme.palette.error.main */
+    --destructive-foreground: 0 0% 100%; /* #ffffff */
+    --border: 0 0% 88%; /* #E1E1E1 - theme.palette.spotliteLightGrey.main */
+    --input: 0 0% 88%; /* #E1E1E1 - theme.palette.spotliteLightGrey.main */
+    --ring: 235 100% 60%; /* #5058E3 - theme.palette.accent.main */
+
+    /* Dark mode Spotlite 색상 (theme.ts에서 정확히 매핑) */
+    --spotlite-text-primary: 0 0% 0%; /* #000000 - theme.palette.spotliteText.primary */
+    --spotlite-text-secondary: 0 0% 35%; /* #5A5A5A - theme.palette.spotliteText.secondary */
+    --spotlite-light-grey: 0 0% 88%; /* #E1E1E1 - theme.palette.spotliteLightGrey.main */
+    --spotlite-light-grey-light: 0 0% 88% / 0.2; /* rgba(225, 225, 225, 0.2) - theme.palette.spotliteLightGrey.light */
+    --spotlite-floating-bg: 0 0% 0% / 0.8; /* rgba(0, 0, 0, 0.8) - theme.palette.spotliteFloatingBg.main */
+
+    /* Dark mode MUI 테마 색상 (theme.ts에서 정확히 매핑) */
+    --minor: 0 0% 95%; /* #F1F1F1 - theme.palette.minor.main */
+    --minor-foreground: 0 0% 0%; /* #000000 */
+    --negative: 4 90% 58%; /* #D32F2F - theme.palette.negative.main */
+    --negative-foreground: 0 0% 100%; /* #ffffff - theme.palette.negative.contrastText */
+    --line: 142 100% 40%; /* #06C755 - theme.palette.line.main */
+    --line-dark: 142 100% 32%; /* #05a84e - theme.palette.line.dark */
+    --line-foreground: 0 0% 100%; /* #ffffff - theme.palette.line.contrastText */
+    --highlight: 60 100% 80%; /* #FFFF99 - theme.palette.highLight.main */
+    --warning-light: 54 100% 92%; /* #FEF8D4 - theme.palette.warning.light */
+    --warning: 54 100% 50%; /* #FFDA00 - theme.palette.warning.main */
+    --warning-dark: 54 100% 50%; /* #FFDA00 - theme.palette.warning.main */
+    --success: 235 100% 60%; /* #5058e3 - theme.palette.success.main */
+    --info: 235 100% 60%; /* #5058e3 - theme.palette.info.main */
   }
 }
 
@@ -56,7 +102,27 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-metropolis), var(--font-pretendard), sans-serif;
   }
+
+  /* Spotlite 폰트 클래스들 */
+  .font-metropolis {
+    font-family: var(--font-metropolis), sans-serif;
+  }
+
+  .font-pretendard {
+    font-family: var(--font-pretendard), sans-serif;
+  }
+
+  .font-roboto {
+    font-family: var(--font-roboto), sans-serif;
+  }
+
+  .font-figtree {
+    font-family: var(--font-figtree), sans-serif;
+  }
+
+  /* Spotlite 커스텀 스타일은 shadcn 기본 스타일을 사용하므로 제거됨 */
 }
 
 * {

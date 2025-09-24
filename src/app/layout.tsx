@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { pretendard, metropolis, roboto, figtree } from '@/styles/theme'
 import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Spotlite Design System',
@@ -17,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className={inter.className}>
+      <body className={`${metropolis.variable} ${pretendard.variable} ${roboto.variable} ${figtree.variable} font-metropolis`}>
         <ThemeProvider>
           {children}
         </ThemeProvider>

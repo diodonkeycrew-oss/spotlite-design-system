@@ -1,4 +1,8 @@
+import React from 'react'
 import type { Preview } from '@storybook/nextjs'
+import { ThemeProvider } from '@mui/material/styles'
+import { CssBaseline } from '@mui/material'
+import theme from '../src/styles/theme'
 
 import '../src/app/globals.css'
 
@@ -26,6 +30,14 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme={theme} key={theme.palette.mode}>
+        <CssBaseline />
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
 };
 
 export default preview;

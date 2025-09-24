@@ -4,7 +4,6 @@ const config: StorybookConfig = {
   "stories": [
     "../src/stories/mui/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../src/stories/shadcn/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    "../src/stories/example/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   "addons": [
     "@storybook/addon-essentials",
