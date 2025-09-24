@@ -1,3 +1,5 @@
+"use client"
+
 import { Container, Typography, Box, Button, Grid } from '@mui/material'
 import { PlayArrow, Code, Palette } from '@mui/icons-material'
 
@@ -65,6 +67,15 @@ export default function Home() {
             sx={{ textDecoration: 'none' }}
           >
             shadcn/ui 보기
+          </Button>
+          <Button
+            variant="outlined"
+            size="large"
+            component="a"
+            href="/typography"
+            sx={{ textDecoration: 'none' }}
+          >
+            Typography 보기
           </Button>
         </Box>
       </Box>

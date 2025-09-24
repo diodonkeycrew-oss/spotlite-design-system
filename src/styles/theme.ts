@@ -1,3 +1,5 @@
+'use client'
+
 import localFont from "next/font/local";
 import { Figtree, Roboto } from "next/font/google";
 import { createTheme, css, styled } from "@mui/material/styles";
