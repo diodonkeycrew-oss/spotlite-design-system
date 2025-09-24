@@ -22,3 +22,7 @@ export type { LabelProps } from './label'
 // Accordion 관련
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent, accordionVariants } from './accordion'
 export type { VariantProps } from 'class-variance-authority'
+
+// Radio 관련
+export { RadioGroup, RadioGroupItem, radioVariants } from './radio'
+export type { RadioVariantProps } from './radio'
