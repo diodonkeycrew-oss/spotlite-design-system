@@ -83,7 +83,7 @@ export const Variants: Story = {
           </div>
         </RadioGroup>
       </div>
-      
+
       <div className="space-y-2">
         <Label>Accent</Label>
         <RadioGroup defaultValue="accent1">
@@ -97,7 +97,7 @@ export const Variants: Story = {
           </div>
         </RadioGroup>
       </div>
-      
+
       <div className="space-y-2">
         <Label>Negative</Label>
         <RadioGroup defaultValue="negative1">
@@ -111,7 +111,7 @@ export const Variants: Story = {
           </div>
         </RadioGroup>
       </div>
-      
+
       <div className="space-y-2">
         <Label>Line</Label>
         <RadioGroup defaultValue="line1">
@@ -125,7 +125,7 @@ export const Variants: Story = {
           </div>
         </RadioGroup>
       </div>
-      
+
       <div className="space-y-2">
         <Label>Minor</Label>
         <RadioGroup defaultValue="minor1">
@@ -160,7 +160,7 @@ export const Sizes: Story = {
           </div>
         </RadioGroup>
       </div>
-      
+
       <div className="space-y-2">
         <Label>Default</Label>
         <RadioGroup defaultValue="default1">
@@ -174,7 +174,7 @@ export const Sizes: Story = {
           </div>
         </RadioGroup>
       </div>
-      
+
       <div className="space-y-2">
         <Label>Large</Label>
         <RadioGroup defaultValue="large1">
@@ -209,7 +209,7 @@ export const States: Story = {
           </div>
         </RadioGroup>
       </div>
-      
+
       <div className="space-y-2">
         <Label>Checked</Label>
         <RadioGroup defaultValue="checked1">
@@ -223,7 +223,7 @@ export const States: Story = {
           </div>
         </RadioGroup>
       </div>
-      
+
       <div className="space-y-2">
         <Label>Disabled</Label>
         <RadioGroup defaultValue="disabled1" disabled>
@@ -245,7 +245,7 @@ export const States: Story = {
 export const Interactive: Story = {
   render: () => {
     const [value, setValue] = useState('option1');
-    
+
     return (
       <div className="space-y-2">
         <Label>인터랙티브 Radio</Label>
@@ -293,7 +293,7 @@ export const Layout: Story = {
           </div>
         </RadioGroup>
       </div>
-      
+
       <div className="space-y-2">
         <Label>수평 배치</Label>
         <RadioGroup defaultValue="horizontal1" className="flex flex-row space-x-4">
@@ -340,7 +340,7 @@ export const Examples: Story = {
           </div>
         </RadioGroup>
       </div>
-      
+
       <div className="space-y-2">
         <Label>알림 설정</Label>
         <RadioGroup defaultValue="all">

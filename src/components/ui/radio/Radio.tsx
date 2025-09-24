@@ -47,7 +47,7 @@ RadioGroup.displayName = RadioGroupPrimitive.Root.displayName;
 const RadioGroupItem = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item> &
-    VariantProps<typeof radioVariants>
+  VariantProps<typeof radioVariants>
 >(({ className, variant, size, ...props }, ref) => {
   return (
     <RadioGroupPrimitive.Item

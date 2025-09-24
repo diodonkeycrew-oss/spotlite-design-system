@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { 
-  Radio, 
-  RadioGroup, 
-  FormControl, 
-  FormControlLabel, 
+import {
+  Radio,
+  RadioGroup,
+  FormControl,
+  FormControlLabel,
   FormLabel,
   FormHelperText
 } from '@mui/material';
@@ -68,15 +68,15 @@ export const Default: Story = {
     <FormControl>
       <FormLabel>기본 Radio</FormLabel>
       <RadioGroup>
-        <FormControlLabel 
-          value="option1" 
-          control={<Radio {...args} />} 
-          label="옵션 1" 
+        <FormControlLabel
+          value="option1"
+          control={<Radio {...args} />}
+          label="옵션 1"
         />
-        <FormControlLabel 
-          value="option2" 
-          control={<Radio {...args} />} 
-          label="옵션 2" 
+        <FormControlLabel
+          value="option2"
+          control={<Radio {...args} />}
+          label="옵션 2"
         />
       </RadioGroup>
     </FormControl>
@@ -94,7 +94,7 @@ export const Colors: Story = {
           <FormControlLabel value="primary2" control={<Radio color="primary" />} label="Primary 2" />
         </RadioGroup>
       </FormControl>
-      
+
       <FormControl>
         <FormLabel>Secondary</FormLabel>
         <RadioGroup>
@@ -102,7 +102,7 @@ export const Colors: Story = {
           <FormControlLabel value="secondary2" control={<Radio color="secondary" />} label="Secondary 2" />
         </RadioGroup>
       </FormControl>
-      
+
       <FormControl>
         <FormLabel>Accent</FormLabel>
         <RadioGroup>
@@ -110,7 +110,7 @@ export const Colors: Story = {
           <FormControlLabel value="accent2" control={<Radio color="accent" />} label="Accent 2" />
         </RadioGroup>
       </FormControl>
-      
+
       <FormControl>
         <FormLabel>Negative</FormLabel>
         <RadioGroup>
@@ -118,7 +118,7 @@ export const Colors: Story = {
           <FormControlLabel value="negative2" control={<Radio color="negative" />} label="Negative 2" />
         </RadioGroup>
       </FormControl>
-      
+
       <FormControl>
         <FormLabel>Line</FormLabel>
         <RadioGroup>
@@ -141,7 +141,7 @@ export const Sizes: Story = {
           <FormControlLabel value="small2" control={<Radio size="small" />} label="Small Radio 2" />
         </RadioGroup>
       </FormControl>
-      
+
       <FormControl>
         <FormLabel>Medium</FormLabel>
         <RadioGroup>
@@ -164,7 +164,7 @@ export const States: Story = {
           <FormControlLabel value="normal2" control={<Radio />} label="Normal Radio 2" />
         </RadioGroup>
       </FormControl>
-      
+
       <FormControl>
         <FormLabel>Checked</FormLabel>
         <RadioGroup>
@@ -172,7 +172,7 @@ export const States: Story = {
           <FormControlLabel value="checked2" control={<Radio />} label="Unchecked Radio 2" />
         </RadioGroup>
       </FormControl>
-      
+
       <FormControl>
         <FormLabel>Disabled</FormLabel>
         <RadioGroup>
@@ -180,7 +180,7 @@ export const States: Story = {
           <FormControlLabel value="disabled2" control={<Radio disabled />} label="Disabled Radio 2" />
         </RadioGroup>
       </FormControl>
-      
+
       <FormControl>
         <FormLabel>Disabled Checked</FormLabel>
         <RadioGroup>
@@ -196,7 +196,7 @@ export const States: Story = {
 export const Interactive: Story = {
   render: () => {
     const [value, setValue] = useState('option1');
-    
+
     return (
       <FormControl>
         <FormLabel>인터랙티브 Radio</FormLabel>
@@ -240,7 +240,7 @@ export const Layout: Story = {
           <FormControlLabel value="vertical3" control={<Radio />} label="수직 옵션 3" />
         </RadioGroup>
       </FormControl>
-      
+
       <FormControl>
         <FormLabel>수평 배치</FormLabel>
         <RadioGroup row>
@@ -266,7 +266,7 @@ export const Examples: Story = {
           <FormControlLabel value="naver" control={<Radio color="primary" />} label="네이버페이" />
         </RadioGroup>
       </FormControl>
-      
+
       <FormControl>
         <FormLabel>알림 설정</FormLabel>
         <RadioGroup>
