@@ -1,65 +1,71 @@
 import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
+const inputVariants = cva(
+  "flex w-full rounded-lg border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        default: "border-gray-300 hover:border-blue-500 focus:border-blue-500",
+        outlined: "border-gray-300 hover:border-blue-500 focus:border-blue-500",
+        filled: "bg-gray-100 border-0 hover:bg-gray-200 focus:bg-gray-200",
+        standard: "border-0 border-b-2 border-gray-300 rounded-none hover:border-blue-500 focus:border-blue-500",
+      },
+      size: {
+        small: "h-8 px-2 py-1 text-xs",
+        medium: "h-10 px-3 py-2 text-sm",
+        large: "h-12 px-4 py-3 text-base",
+      },
+      error: {
+        true: "border-red-500 focus:border-red-500 focus:ring-red-500",
+        false: "",
+      },
+    },
+    defaultVariants: {
+      variant: "outlined",
+      size: "medium",
+      error: false,
+    },
+  }
+)
+
 export interface InputProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
-  variant?: "default" | "outlined" | "filled" | "standard"
-  size?: "small" | "medium" | "large"
-  error?: boolean
-  helperText?: string
-  label?: string
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
+  VariantProps<typeof inputVariants> {
+  startIcon?: React.ReactNode
+  endIcon?: React.ReactNode
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, variant = "outlined", size = "medium", error, helperText, label, ...props }, ref) => {
-    const inputId = React.useId()
-    
+  ({ className, type, variant, size, error, startIcon, endIcon, ...props }, ref) => {
     return (
-      <div className="w-full">
-        {label && (
-          <label 
-            htmlFor={inputId}
-            className={cn(
-              "block text-sm font-bold mb-1",
-              error ? "text-red-600" : "text-black"
-            )}
-          >
-            {label}
-          </label>
+      <div className="relative">
+        {startIcon && (
+          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground flex items-center justify-center w-4 h-4">
+            {startIcon}
+          </div>
         )}
         <input
           type={type}
-          id={inputId}
           className={cn(
-            "flex w-full rounded-lg border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-            // Variant styles
+            inputVariants({ variant, size, error }),
+            // Icon padding
             {
-              "border-gray-300 hover:border-blue-500 focus:border-blue-500": variant === "outlined",
-              "border-0 border-b-2 border-gray-300 rounded-none hover:border-blue-500 focus:border-blue-500": variant === "standard",
-              "bg-gray-100 border-0 hover:bg-gray-200 focus:bg-gray-200": variant === "filled",
-            },
-            // Size styles
-            {
-              "h-8 px-2 py-1 text-xs": size === "small",
-              "h-10 px-3 py-2 text-sm": size === "medium", 
-              "h-12 px-4 py-3 text-base": size === "large",
-            },
-            // Error styles
-            {
-              "border-red-500 focus:border-red-500 focus:ring-red-500": error,
+              "pl-10": startIcon,
+              "pr-10": endIcon,
             },
             className
           )}
           ref={ref}
           {...props}
         />
-        {helperText && (
-          <p className={cn(
-            "mt-1 text-xs",
-            error ? "text-red-600" : "text-gray-600"
-          )}>
-            {helperText}
-          </p>
+        {endIcon && (
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground flex items-center justify-center w-4 h-4 pointer-events-none">
+            <div className="pointer-events-auto">
+              {endIcon}
+            </div>
+          </div>
         )}
       </div>
     )
@@ -67,4 +73,4 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 )
 Input.displayName = "Input"
 
-export { Input }
+export { Input, inputVariants }

@@ -13,7 +13,8 @@ export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
 
 // Input 관련
 export { Input, inputVariants } from './input'
-export type { InputProps, InputVariantProps, InputVariant, InputSize } from './input'
+export type { InputProps } from './input'
 
-// 기타 shadcn 컴포넌트들
-export { Badge } from './badge'
+// Label 관련
+export { Label, labelVariants } from './label'
+export type { LabelProps } from './label'
