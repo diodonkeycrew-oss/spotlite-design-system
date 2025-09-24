@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { 
-  TextField, 
-  FormControl, 
-  InputLabel, 
-  OutlinedInput, 
-  FilledInput, 
+import {
+  TextField,
+  FormControl,
+  InputLabel,
+  OutlinedInput,
+  FilledInput,
   InputAdornment,
   IconButton
 } from '@mui/material'
@@ -195,7 +195,7 @@ export const WithEndIcon: Story = {
 export const PasswordInput: Story = {
   render: () => {
     const [showPassword, setShowPassword] = useState(false)
-    
+
     return (
       <TextField
         label="비밀번호"
