@@ -6,8 +6,10 @@ export type { ButtonProps, ButtonVariantProps, ButtonVariant, ButtonSize } from 
 
 // Typography 관련  
 export { Typography, typographyVariants } from './typography'
-export type { TypographyProps, TypographyVariantProps, TypographyVariant, TypographyColor } from './typography'
+export type { TypographyProps, TypographyVariantProps } from './typography'
+
+// Card 관련
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from './card'
 
 // 기타 shadcn 컴포넌트들
 export { Badge } from './badge'
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from './card'
