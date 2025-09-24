@@ -18,3 +18,7 @@ export type { InputProps } from './input'
 // Label 관련
 export { Label, labelVariants } from './label'
 export type { LabelProps } from './label'
+
+// Accordion 관련
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent, accordionVariants } from './accordion'
+export type { VariantProps } from 'class-variance-authority'
