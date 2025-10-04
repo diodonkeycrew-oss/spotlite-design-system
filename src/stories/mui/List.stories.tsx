@@ -452,39 +452,41 @@ export const Interactive: Story = {
 // Spotlite maxHeight 데모
 export const SpotliteMaxHeight: Story = {
   render: () => (
-    <Stack spacing={3} sx={{ width: 400 }}>
-      <Box>
-        <Typography variant="h6" gutterBottom>
-          Spotlite List maxHeight 데모
-        </Typography>
-        <Typography variant="body2" color="text.secondary" gutterBottom>
-          Paper 내부의 List는 maxHeight가 70vh로 제한되어 스크롤이 생깁니다.
-        </Typography>
-      </Box>
+    <Box sx={{ maxWidth: 450, mx: 'auto' }}>
+      <Stack spacing={2}>
+        <Box>
+          <Typography variant="h6" gutterBottom>
+            Spotlite maxHeight 데모
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Paper 내부 List는 maxHeight: 70vh로 제한됩니다.
+          </Typography>
+        </Box>
 
-      <Paper sx={{ width: '100%' }}>
-        <List subheader={<ListSubheader>매우 긴 목록 (50개 항목)</ListSubheader>}>
-          {Array.from({ length: 50 }, (_, index) => (
-            <ListItemButton key={index}>
-              <ListItemAvatar>
-                <Avatar>{index + 1}</Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary={`사용자 ${index + 1}`}
-                secondary={`이메일: user${index + 1}@example.com`}
-              />
-              <IconButton edge="end">
-                {index % 2 === 0 ? <Star /> : <StarBorder />}
-              </IconButton>
-            </ListItemButton>
-          ))}
-        </List>
-      </Paper>
+        <Paper sx={{ width: '100%' }}>
+          <List subheader={<ListSubheader>긴 목록 (50개 항목)</ListSubheader>}>
+            {Array.from({ length: 50 }, (_, index) => (
+              <ListItemButton key={index}>
+                <ListItemAvatar>
+                  <Avatar sx={{ width: 32, height: 32, fontSize: '0.875rem' }}>
+                    {index + 1}
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={`사용자 ${index + 1}`}
+                  secondary={`user${index + 1}@example.com`}
+                  primaryTypographyProps={{ noWrap: true }}
+                  secondaryTypographyProps={{ noWrap: true }}
+                />
+              </ListItemButton>
+            ))}
+          </List>
+        </Paper>
 
-      <Typography variant="body2" color="text.secondary">
-        위 List는 Paper 내부에 있어서 Spotlite 테마의 maxHeight: 70vh 제한이 적용됩니다.
-        항목이 많을 때 자동으로 스크롤이 생성되어 사용성을 향상시킵니다.
-      </Typography>
-    </Stack>
+        <Typography variant="caption" color="text.secondary" sx={{ display: 'block' }}>
+          * 항목이 많을 때 자동 스크롤이 생성됩니다.
+        </Typography>
+      </Stack>
+    </Box>
   ),
 };

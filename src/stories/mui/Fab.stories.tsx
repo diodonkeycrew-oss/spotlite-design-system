@@ -8,8 +8,6 @@ import {
   Share,
   Delete,
   Mail,
-  Phone,
-  Home,
   Settings,
   Search,
   Download
@@ -131,10 +129,11 @@ export const Large: Story = {
 export const Extended: Story = {
   args: {
     variant: 'extended',
+    sx: { px: 2 },
     children: (
       <>
         <Add sx={{ mr: 1 }} />
-        추가하기
+        추가
       </>
     ),
   },
@@ -144,10 +143,11 @@ export const ExtendedPrimary: Story = {
   args: {
     variant: 'extended',
     color: 'primary',
+    sx: { px: 2 },
     children: (
       <>
         <Edit sx={{ mr: 1 }} />
-        편집하기
+        편집
       </>
     ),
   },
@@ -157,82 +157,13 @@ export const ExtendedSecondary: Story = {
   args: {
     variant: 'extended',
     color: 'secondary',
+    sx: { px: 2 },
     children: (
       <>
         <Share sx={{ mr: 1 }} />
-        공유하기
+        공유
       </>
     ),
-  },
-};
-
-// 다양한 아이콘이 있는 Fab들
-export const WithEditIcon: Story = {
-  args: {
-    color: 'primary',
-    children: <Edit />,
-  },
-};
-
-export const WithFavoriteIcon: Story = {
-  args: {
-    color: 'error',
-    children: <Favorite />,
-  },
-};
-
-export const WithNavigationIcon: Story = {
-  args: {
-    color: 'info',
-    children: <Navigation />,
-  },
-};
-
-export const WithShareIcon: Story = {
-  args: {
-    color: 'success',
-    children: <Share />,
-  },
-};
-
-export const WithMailIcon: Story = {
-  args: {
-    color: 'secondary',
-    children: <Mail />,
-  },
-};
-
-export const WithPhoneIcon: Story = {
-  args: {
-    color: 'warning',
-    children: <Phone />,
-  },
-};
-
-export const WithHomeIcon: Story = {
-  args: {
-    children: <Home />,
-  },
-};
-
-export const WithSettingsIcon: Story = {
-  args: {
-    color: 'primary',
-    children: <Settings />,
-  },
-};
-
-export const WithSearchIcon: Story = {
-  args: {
-    color: 'info',
-    children: <Search />,
-  },
-};
-
-export const WithDownloadIcon: Story = {
-  args: {
-    color: 'success',
-    children: <Download />,
   },
 };
 
@@ -240,15 +171,8 @@ export const WithDownloadIcon: Story = {
 export const Disabled: Story = {
   args: {
     disabled: true,
-    children: <Add />,
-  },
-};
-
-export const DisabledPrimary: Story = {
-  args: {
-    disabled: true,
     color: 'primary',
-    children: <Edit />,
+    children: <Add />,
   },
 };
 
@@ -256,10 +180,12 @@ export const DisabledExtended: Story = {
   args: {
     disabled: true,
     variant: 'extended',
+    color: 'primary',
+    sx: { px: 2 },
     children: (
       <>
         <Add sx={{ mr: 1 }} />
-        비활성화됨
+        사용 불가
       </>
     ),
   },
@@ -268,28 +194,49 @@ export const DisabledExtended: Story = {
 // 모든 색상 조합 예시
 export const AllColors: Story = {
   render: () => (
-    <Stack direction="row" spacing={2} flexWrap="wrap">
-      <Fab>
-        <Add />
-      </Fab>
-      <Fab color="primary">
-        <Edit />
-      </Fab>
-      <Fab color="secondary">
-        <Favorite />
-      </Fab>
-      <Fab color="error">
-        <Delete />
-      </Fab>
-      <Fab color="info">
-        <Mail />
-      </Fab>
-      <Fab color="success">
-        <Navigation />
-      </Fab>
-      <Fab color="warning">
-        <Share />
-      </Fab>
+    <Stack direction="row" spacing={2} flexWrap="wrap" sx={{ p: 3, bgcolor: '#f5f5f5', borderRadius: 2 }}>
+      <Box textAlign="center">
+        <Fab>
+          <Add />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">Default</Box>
+      </Box>
+      <Box textAlign="center">
+        <Fab color="primary">
+          <Edit />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">Primary</Box>
+      </Box>
+      <Box textAlign="center">
+        <Fab color="secondary">
+          <Favorite />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">Secondary</Box>
+      </Box>
+      <Box textAlign="center">
+        <Fab color="error">
+          <Delete />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">Error</Box>
+      </Box>
+      <Box textAlign="center">
+        <Fab color="info">
+          <Mail />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">Info</Box>
+      </Box>
+      <Box textAlign="center">
+        <Fab color="success">
+          <Navigation />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">Success</Box>
+      </Box>
+      <Box textAlign="center">
+        <Fab color="warning">
+          <Search />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">Warning</Box>
+      </Box>
     </Stack>
   ),
 };
@@ -297,24 +244,24 @@ export const AllColors: Story = {
 // 모든 크기 조합 예시 (Spotlite 커스텀 large 포함)
 export const AllSizes: Story = {
   render: () => (
-    <Stack direction="row" spacing={2} alignItems="center">
+    <Stack direction="row" spacing={4} alignItems="flex-end" sx={{ p: 3, bgcolor: '#f5f5f5', borderRadius: 2 }}>
       <Box textAlign="center">
         <Fab size="small" color="primary">
           <Add />
         </Fab>
-        <Box mt={1} fontSize="0.75rem">Small</Box>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">Small</Box>
       </Box>
       <Box textAlign="center">
         <Fab size="medium" color="primary">
           <Add />
         </Fab>
-        <Box mt={1} fontSize="0.75rem">Medium</Box>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">Medium</Box>
       </Box>
       <Box textAlign="center">
         <Fab size="large" color="primary">
           <Add />
         </Fab>
-        <Box mt={1} fontSize="0.75rem">Large (80x80)</Box>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">Large (80x80)</Box>
       </Box>
     </Stack>
   ),
@@ -323,26 +270,30 @@ export const AllSizes: Story = {
 // Extended Fab 다양한 예시
 export const ExtendedVariations: Story = {
   render: () => (
-    <Stack direction="column" spacing={2}>
-      <Fab variant="extended">
+    <Stack direction="column" spacing={2} sx={{ p: 3, bgcolor: '#f5f5f5', borderRadius: 2, minWidth: 200 }}>
+      <Fab variant="extended" color="primary" sx={{ px: 2 }}>
         <Add sx={{ mr: 1 }} />
-        기본 Extended
+        새로 만들기
       </Fab>
-      <Fab variant="extended" color="primary">
+      <Fab variant="extended" color="secondary" sx={{ px: 2 }}>
         <Edit sx={{ mr: 1 }} />
-        Primary Extended
+        수정하기
       </Fab>
-      <Fab variant="extended" color="secondary">
-        <Share sx={{ mr: 1 }} />
-        Secondary Extended
-      </Fab>
-      <Fab variant="extended" color="success">
+      <Fab variant="extended" color="success" sx={{ px: 2 }}>
         <Download sx={{ mr: 1 }} />
-        Success Extended
+        다운로드
       </Fab>
-      <Fab variant="extended" disabled>
+      <Fab variant="extended" color="error" sx={{ px: 2 }}>
+        <Delete sx={{ mr: 1 }} />
+        삭제하기
+      </Fab>
+      <Fab variant="extended" color="info" sx={{ px: 2 }}>
+        <Mail sx={{ mr: 1 }} />
+        메일 보내기
+      </Fab>
+      <Fab variant="extended" disabled sx={{ px: 2 }}>
         <Settings sx={{ mr: 1 }} />
-        Disabled Extended
+        사용 불가
       </Fab>
     </Stack>
   ),
@@ -351,42 +302,122 @@ export const ExtendedVariations: Story = {
 // 실제 사용 예시
 export const PracticalExample: Story = {
   render: () => (
-    <Box sx={{ position: 'relative', height: 300, width: 400, border: '1px dashed #ccc', borderRadius: 2 }}>
-      <Box sx={{ p: 2 }}>
-        <h3>실제 사용 예시</h3>
-        <p>이 영역은 콘텐츠 영역을 시뮬레이션합니다.</p>
-        <p>Fab은 일반적으로 화면의 고정된 위치에 배치됩니다.</p>
+    <Box sx={{
+      position: 'relative',
+      height: 400,
+      width: '100%',
+      maxWidth: 600,
+      bgcolor: 'white',
+      border: '1px solid #e0e0e0',
+      borderRadius: 2,
+      overflow: 'hidden'
+    }}>
+      {/* 헤더 */}
+      <Box sx={{
+        p: 2,
+        borderBottom: '1px solid #e0e0e0',
+        bgcolor: '#fafafa'
+      }}>
+        <h3 style={{ margin: 0 }}>Fab 실제 사용 예시</h3>
       </Box>
 
-      {/* 우하단 기본 액션 */}
+      {/* 콘텐츠 영역 */}
+      <Box sx={{ p: 3, height: 'calc(100% - 68px)', overflow: 'auto' }}>
+        <p>이 영역은 실제 애플리케이션의 콘텐츠를 시뮬레이션합니다.</p>
+        <p>Fab 버튼들은 주요 액션을 위해 화면의 고정된 위치에 배치됩니다.</p>
+        <ul>
+          <li>우하단: 메인 액션 (새 항목 추가)</li>
+          <li>좌하단: 보조 액션 (편집 모드)</li>
+          <li>우상단: 공유하기</li>
+        </ul>
+      </Box>
+
+      {/* 메인 액션 - 우하단 */}
       <Fab
         color="primary"
         sx={{ position: 'absolute', bottom: 16, right: 16 }}
-        onClick={() => alert('메인 액션 실행!')}
+        onClick={() => alert('새 항목을 추가합니다')}
       >
         <Add />
       </Fab>
 
-      {/* 좌하단 보조 액션 */}
+      {/* 보조 액션 - 좌하단 */}
       <Fab
         size="small"
         color="secondary"
         sx={{ position: 'absolute', bottom: 16, left: 16 }}
-        onClick={() => alert('보조 액션 실행!')}
+        onClick={() => alert('편집 모드로 전환합니다')}
       >
         <Edit />
       </Fab>
 
-      {/* 상단 Extended Fab */}
+      {/* Extended Fab - 우상단 */}
       <Fab
         variant="extended"
         color="success"
-        sx={{ position: 'absolute', top: 16, right: 16 }}
-        onClick={() => alert('Extended 액션 실행!')}
+        size="small"
+        sx={{ position: 'absolute', top: 80, right: 16 }}
+        onClick={() => alert('공유하기를 실행합니다')}
       >
         <Share sx={{ mr: 1 }} />
-        공유하기
+        공유
       </Fab>
     </Box>
+  ),
+};
+
+// 아이콘별 사용 예시
+export const IconExamples: Story = {
+  render: () => (
+    <Stack direction="row" spacing={2} flexWrap="wrap" sx={{ p: 3, bgcolor: '#f5f5f5', borderRadius: 2 }}>
+      <Box textAlign="center">
+        <Fab color="primary">
+          <Add />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">추가</Box>
+      </Box>
+      <Box textAlign="center">
+        <Fab color="secondary">
+          <Edit />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">편집</Box>
+      </Box>
+      <Box textAlign="center">
+        <Fab color="error">
+          <Delete />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">삭제</Box>
+      </Box>
+      <Box textAlign="center">
+        <Fab color="success">
+          <Download />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">다운로드</Box>
+      </Box>
+      <Box textAlign="center">
+        <Fab color="info">
+          <Mail />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">메일</Box>
+      </Box>
+      <Box textAlign="center">
+        <Fab color="warning">
+          <Search />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">검색</Box>
+      </Box>
+      <Box textAlign="center">
+        <Fab>
+          <Settings />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">설정</Box>
+      </Box>
+      <Box textAlign="center">
+        <Fab color="primary">
+          <Favorite />
+        </Fab>
+        <Box mt={1} fontSize="0.75rem" color="text.secondary">좋아요</Box>
+      </Box>
+    </Stack>
   ),
 };
