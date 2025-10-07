@@ -14,8 +14,6 @@ const accordionVariants = cva(
       variant: {
         default: "text-foreground",
         spotlite: "text-black font-semibold",
-        outlined: "border border-gray-300 rounded-lg px-4",
-        filled: "bg-gray-100 text-black rounded-lg px-4",
       },
       size: {
         default: "py-4",

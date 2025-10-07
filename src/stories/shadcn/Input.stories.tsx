@@ -12,7 +12,7 @@ const meta: Meta<typeof Input> = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['default', 'outlined', 'filled', 'standard'],
+      options: ['default'],
     },
     size: {
       control: { type: 'select' },
@@ -49,7 +49,7 @@ export const DefaultVariants: Story = {
       <Input
         id="default-variants-input"
         placeholder="텍스트를 입력하세요"
-        variant="outlined"
+        variant="default"
         size="medium"
       />
     </div>
@@ -64,7 +64,7 @@ export const WithLabel: Story = {
       <Input
         id="basic-input"
         placeholder="텍스트를 입력하세요"
-        variant="outlined"
+        variant="default"
         size="medium"
       />
     </div>
@@ -72,44 +72,6 @@ export const WithLabel: Story = {
 }
 
 // 다양한 Variant 스토리
-export const Outlined: Story = {
-  render: () => (
-    <div className="space-y-2">
-      <Label htmlFor="outlined-input">Outlined Input</Label>
-      <Input
-        id="outlined-input"
-        placeholder="Outlined 스타일"
-        variant="outlined"
-      />
-    </div>
-  ),
-}
-
-export const Filled: Story = {
-  render: () => (
-    <div className="space-y-2">
-      <Label htmlFor="filled-input">Filled Input</Label>
-      <Input
-        id="filled-input"
-        placeholder="Filled 스타일"
-        variant="filled"
-      />
-    </div>
-  ),
-}
-
-export const Standard: Story = {
-  render: () => (
-    <div className="space-y-2">
-      <Label htmlFor="standard-input">Standard Input</Label>
-      <Input
-        id="standard-input"
-        placeholder="Standard 스타일"
-        variant="standard"
-      />
-    </div>
-  ),
-}
 
 export const DefaultVariant: Story = {
   render: () => (
@@ -132,7 +94,7 @@ export const Small: Story = {
       <Input
         id="small-input"
         placeholder="Small 크기"
-        variant="outlined"
+        variant="default"
         size="small"
       />
     </div>
@@ -146,7 +108,7 @@ export const Medium: Story = {
       <Input
         id="medium-input"
         placeholder="Medium 크기"
-        variant="outlined"
+        variant="default"
         size="medium"
       />
     </div>
@@ -160,7 +122,7 @@ export const Large: Story = {
       <Input
         id="large-input"
         placeholder="Large 크기"
-        variant="outlined"
+        variant="default"
         size="large"
       />
     </div>
@@ -175,7 +137,7 @@ export const Disabled: Story = {
       <Input
         id="disabled-input"
         placeholder="비활성화된 입력"
-        variant="outlined"
+        variant="default"
         disabled
       />
     </div>
@@ -189,7 +151,7 @@ export const Error: Story = {
       <Input
         id="error-input"
         placeholder="에러 상태"
-        variant="outlined"
+        variant="default"
         error
       />
       <p className="text-xs text-red-600">에러 메시지입니다</p>
@@ -204,7 +166,7 @@ export const WithHelperText: Story = {
       <Input
         id="helper-input"
         placeholder="도움말이 있는 입력"
-        variant="outlined"
+        variant="default"
       />
       <p className="text-xs text-gray-600">도움말 텍스트입니다</p>
     </div>
@@ -219,7 +181,7 @@ export const EmailInput: Story = {
       <Input
         id="email-input"
         placeholder="이메일을 입력하세요"
-        variant="outlined"
+        variant="default"
         type="email"
       />
     </div>
@@ -233,7 +195,7 @@ export const PasswordInput: Story = {
       <Input
         id="password-input"
         placeholder="비밀번호를 입력하세요"
-        variant="outlined"
+        variant="default"
         type="password"
       />
     </div>
@@ -247,7 +209,7 @@ export const NumberInput: Story = {
       <Input
         id="number-input"
         placeholder="숫자를 입력하세요"
-        variant="outlined"
+        variant="default"
         type="number"
       />
     </div>
@@ -261,7 +223,7 @@ export const TelInput: Story = {
       <Input
         id="tel-input"
         placeholder="전화번호를 입력하세요"
-        variant="outlined"
+        variant="default"
         type="tel"
       />
     </div>
@@ -275,7 +237,7 @@ export const UrlInput: Story = {
       <Input
         id="url-input"
         placeholder="URL을 입력하세요"
-        variant="outlined"
+        variant="default"
         type="url"
       />
     </div>
@@ -294,7 +256,7 @@ export const PasswordWithToggle: Story = {
           <Input
             id="password-input"
             placeholder="비밀번호를 입력하세요"
-            variant="outlined"
+            variant="default"
             type={showPassword ? 'text' : 'password'}
           />
           <button
@@ -318,7 +280,7 @@ export const WithStartIcon: Story = {
       <Input
         id="search-input"
         placeholder="검색어를 입력하세요"
-        variant="outlined"
+        variant="default"
         startIcon={<Search className="h-4 w-4" />}
       />
     </div>
@@ -332,7 +294,7 @@ export const WithEndIcon: Story = {
       <Input
         id="user-input"
         placeholder="사용자명을 입력하세요"
-        variant="outlined"
+        variant="default"
         endIcon={<User className="h-4 w-4" />}
       />
     </div>
@@ -346,7 +308,7 @@ export const WithBothIcons: Story = {
       <Input
         id="email-icons-input"
         placeholder="이메일을 입력하세요"
-        variant="outlined"
+        variant="default"
         type="email"
         startIcon={<Mail className="h-4 w-4" />}
         endIcon={<Lock className="h-4 w-4" />}
@@ -366,7 +328,7 @@ export const PasswordWithToggleBuiltIn: Story = {
         <Input
           id="password-builtin-input"
           placeholder="비밀번호를 입력하세요"
-          variant="outlined"
+          variant="default"
           type={showPassword ? 'text' : 'password'}
           endIcon={
             <button
@@ -395,30 +357,6 @@ export const AllVariants: Story = {
           variant="default"
         />
       </div>
-      <div className="space-y-2">
-        <Label htmlFor="outlined-variant">Outlined</Label>
-        <Input
-          id="outlined-variant"
-          placeholder="Outlined 스타일"
-          variant="outlined"
-        />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="filled-variant">Filled</Label>
-        <Input
-          id="filled-variant"
-          placeholder="Filled 스타일"
-          variant="filled"
-        />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="standard-variant">Standard</Label>
-        <Input
-          id="standard-variant"
-          placeholder="Standard 스타일"
-          variant="standard"
-        />
-      </div>
     </div>
   ),
 }
@@ -432,7 +370,7 @@ export const AllSizes: Story = {
         <Input
           id="small-size"
           placeholder="Small 크기"
-          variant="outlined"
+          variant="default"
           size="small"
         />
       </div>
@@ -441,7 +379,7 @@ export const AllSizes: Story = {
         <Input
           id="medium-size"
           placeholder="Medium 크기"
-          variant="outlined"
+          variant="default"
           size="medium"
         />
       </div>
@@ -450,7 +388,7 @@ export const AllSizes: Story = {
         <Input
           id="large-size"
           placeholder="Large 크기"
-          variant="outlined"
+          variant="default"
           size="large"
         />
       </div>
@@ -467,7 +405,7 @@ export const AllTypes: Story = {
         <Input
           id="text-type"
           placeholder="텍스트 입력"
-          variant="outlined"
+          variant="default"
           type="text"
         />
       </div>
@@ -476,7 +414,7 @@ export const AllTypes: Story = {
         <Input
           id="email-type"
           placeholder="이메일 입력"
-          variant="outlined"
+          variant="default"
           type="email"
         />
       </div>
@@ -485,7 +423,7 @@ export const AllTypes: Story = {
         <Input
           id="password-type"
           placeholder="비밀번호 입력"
-          variant="outlined"
+          variant="default"
           type="password"
         />
       </div>
@@ -494,7 +432,7 @@ export const AllTypes: Story = {
         <Input
           id="number-type"
           placeholder="숫자 입력"
-          variant="outlined"
+          variant="default"
           type="number"
         />
       </div>
@@ -503,7 +441,7 @@ export const AllTypes: Story = {
         <Input
           id="tel-type"
           placeholder="전화번호 입력"
-          variant="outlined"
+          variant="default"
           type="tel"
         />
       </div>
@@ -512,7 +450,7 @@ export const AllTypes: Story = {
         <Input
           id="url-type"
           placeholder="URL 입력"
-          variant="outlined"
+          variant="default"
           type="url"
         />
       </div>
@@ -529,7 +467,7 @@ export const FormExample: Story = {
         <Input
           id="form-name"
           placeholder="이름을 입력하세요"
-          variant="outlined"
+          variant="default"
           required
         />
       </div>
@@ -538,7 +476,7 @@ export const FormExample: Story = {
         <Input
           id="form-email"
           placeholder="이메일을 입력하세요"
-          variant="outlined"
+          variant="default"
           type="email"
           required
         />
@@ -548,7 +486,7 @@ export const FormExample: Story = {
         <Input
           id="form-password"
           placeholder="비밀번호를 입력하세요"
-          variant="outlined"
+          variant="default"
           type="password"
           required
         />
@@ -558,7 +496,7 @@ export const FormExample: Story = {
         <Input
           id="form-tel"
           placeholder="전화번호를 입력하세요"
-          variant="outlined"
+          variant="default"
           type="tel"
         />
       </div>
@@ -575,7 +513,7 @@ export const FormWithErrors: Story = {
         <Input
           id="error-name"
           placeholder="이름을 입력하세요"
-          variant="outlined"
+          variant="default"
           error
         />
         <p className="text-xs text-red-600">이름은 필수입니다</p>
@@ -585,7 +523,7 @@ export const FormWithErrors: Story = {
         <Input
           id="error-email"
           placeholder="이메일을 입력하세요"
-          variant="outlined"
+          variant="default"
           type="email"
           error
         />
@@ -596,7 +534,7 @@ export const FormWithErrors: Story = {
         <Input
           id="error-password"
           placeholder="비밀번호를 입력하세요"
-          variant="outlined"
+          variant="default"
           type="password"
         />
         <p className="text-xs text-gray-600">8자 이상 입력하세요</p>

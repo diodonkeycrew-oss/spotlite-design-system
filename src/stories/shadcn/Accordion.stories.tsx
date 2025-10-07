@@ -6,35 +6,22 @@ import {
   AccordionTrigger,
 } from '../../components/ui/accordion'
 
-const meta: Meta<typeof Accordion> = {
+const meta: Meta = {
   title: 'shadcn/Accordion',
   component: Accordion,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {
-    type: {
-      control: { type: 'select' },
-      options: ['single', 'multiple'],
-    },
-    collapsible: {
-      control: { type: 'boolean' },
-    },
-  },
 }
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  args: {
-    type: 'single',
-    collapsible: true,
-  },
-  render: (args) => (
+  render: () => (
     <div style={{ width: '400px' }}>
-      <Accordion {...args} className="w-full">
+      <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>Is it accessible?</AccordionTrigger>
           <AccordionContent>
@@ -59,12 +46,9 @@ export const Default: Story = {
 }
 
 export const Multiple: Story = {
-  args: {
-    type: 'multiple',
-  },
-  render: (args) => (
+  render: () => (
     <div style={{ width: '400px' }}>
-      <Accordion {...args} className="w-full">
+      <Accordion type="multiple" className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>Multiple Accordion 1</AccordionTrigger>
           <AccordionContent>
@@ -89,13 +73,9 @@ export const Multiple: Story = {
 }
 
 export const Spotlite: Story = {
-  args: {
-    type: 'single',
-    collapsible: true,
-  },
-  render: (args) => (
+  render: () => (
     <div style={{ width: '400px' }}>
-      <Accordion {...args} className="w-full">
+      <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger variant="spotlite">
             Spotlite Accordion 1
@@ -117,72 +97,11 @@ export const Spotlite: Story = {
   ),
 }
 
-export const Outlined: Story = {
-  args: {
-    type: 'single',
-    collapsible: true,
-  },
-  render: (args) => (
-    <div style={{ width: '400px' }}>
-      <Accordion {...args} className="w-full">
-        <AccordionItem value="item-1">
-          <AccordionTrigger variant="outlined">
-            Outlined Accordion 1
-          </AccordionTrigger>
-          <AccordionContent>
-            This is an outlined accordion with border styling.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-2">
-          <AccordionTrigger variant="outlined">
-            Outlined Accordion 2
-          </AccordionTrigger>
-          <AccordionContent>
-            Another outlined accordion item.
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
-    </div>
-  ),
-}
-
-export const Filled: Story = {
-  args: {
-    type: 'single',
-    collapsible: true,
-  },
-  render: (args) => (
-    <div style={{ width: '400px' }}>
-      <Accordion {...args} className="w-full">
-        <AccordionItem value="item-1">
-          <AccordionTrigger variant="filled">
-            Filled Accordion 1
-          </AccordionTrigger>
-          <AccordionContent>
-            This is a filled accordion with background color.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-2">
-          <AccordionTrigger variant="filled">
-            Filled Accordion 2
-          </AccordionTrigger>
-          <AccordionContent>
-            Another filled accordion item.
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
-    </div>
-  ),
-}
 
 export const Sizes: Story = {
-  args: {
-    type: 'single',
-    collapsible: true,
-  },
-  render: (args) => (
+  render: () => (
     <div style={{ width: '400px' }}>
-      <Accordion {...args} className="w-full">
+      <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger size="small">
             Small Size Accordion
@@ -213,13 +132,9 @@ export const Sizes: Story = {
 }
 
 export const MixedVariants: Story = {
-  args: {
-    type: 'single',
-    collapsible: true,
-  },
-  render: (args) => (
+  render: () => (
     <div style={{ width: '400px' }}>
-      <Accordion {...args} className="w-full">
+      <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger variant="default">
             Default Variant
@@ -234,22 +149,6 @@ export const MixedVariants: Story = {
           </AccordionTrigger>
           <AccordionContent>
             This is the Spotlite variant with custom styling.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-3">
-          <AccordionTrigger variant="outlined">
-            Outlined Variant
-          </AccordionTrigger>
-          <AccordionContent>
-            This is the outlined variant with border styling.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-4">
-          <AccordionTrigger variant="filled">
-            Filled Variant
-          </AccordionTrigger>
-          <AccordionContent>
-            This is the filled variant with background color.
           </AccordionContent>
         </AccordionItem>
       </Accordion>

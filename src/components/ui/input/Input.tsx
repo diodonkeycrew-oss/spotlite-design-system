@@ -8,9 +8,6 @@ const inputVariants = cva(
     variants: {
       variant: {
         default: "border-gray-300 hover:border-blue-500 focus:border-blue-500",
-        outlined: "border-gray-300 hover:border-blue-500 focus:border-blue-500",
-        filled: "bg-gray-100 border-0 hover:bg-gray-200 focus:bg-gray-200",
-        standard: "border-0 border-b-2 border-gray-300 rounded-none hover:border-blue-500 focus:border-blue-500",
       },
       size: {
         small: "h-8 px-2 py-1 text-xs",
@@ -23,7 +20,7 @@ const inputVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "outlined",
+      variant: "default",
       size: "medium",
       error: false,
     },

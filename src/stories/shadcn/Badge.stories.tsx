@@ -29,7 +29,7 @@ const meta: Meta<typeof Badge> = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['default', 'secondary', 'destructive', 'outline', 'success', 'warning', 'info', 'accent', 'minor', 'negative'],
+      options: ['default', 'secondary', 'destructive', 'outline'],
       description: 'Badge의 시각적 스타일',
     },
     size: {
@@ -71,48 +71,6 @@ export const Outline: Story = {
   },
 };
 
-// Spotlite 커스텀 variant들
-export const Success: Story = {
-  args: {
-    variant: 'success',
-    children: 'Success',
-  },
-};
-
-export const Warning: Story = {
-  args: {
-    variant: 'warning',
-    children: 'Warning',
-  },
-};
-
-export const Info: Story = {
-  args: {
-    variant: 'info',
-    children: 'Info',
-  },
-};
-
-export const Accent: Story = {
-  args: {
-    variant: 'accent',
-    children: 'Accent',
-  },
-};
-
-export const Minor: Story = {
-  args: {
-    variant: 'minor',
-    children: 'Minor',
-  },
-};
-
-export const Negative: Story = {
-  args: {
-    variant: 'negative',
-    children: 'Negative',
-  },
-};
 
 // 크기별 Badge들
 export const Sizes: Story = {
@@ -129,15 +87,15 @@ export const Sizes: Story = {
 export const WithIcons: Story = {
   render: () => (
     <div className="flex flex-wrap gap-2">
-      <Badge variant="success" className="flex items-center gap-1">
+      <Badge variant="default" className="flex items-center gap-1">
         <CheckCircle2 className="h-3 w-3" />
         완료
       </Badge>
-      <Badge variant="warning" className="flex items-center gap-1">
+      <Badge variant="secondary" className="flex items-center gap-1">
         <AlertCircle className="h-3 w-3" />
         대기중
       </Badge>
-      <Badge variant="info" className="flex items-center gap-1">
+      <Badge variant="outline" className="flex items-center gap-1">
         <InfoIcon className="h-3 w-3" />
         정보
       </Badge>
@@ -145,7 +103,7 @@ export const WithIcons: Story = {
         <X className="h-3 w-3" />
         오류
       </Badge>
-      <Badge variant="accent" className="flex items-center gap-1">
+      <Badge variant="default" className="flex items-center gap-1">
         <Star className="h-3 w-3" />
         즐겨찾기
       </Badge>
@@ -166,13 +124,13 @@ export const NumberBadges: Story = {
         </div>
         <div className="relative">
           <Button variant="outline">알림</Button>
-          <Badge variant="info" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs">
+          <Badge variant="outline" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs">
             12
           </Badge>
         </div>
         <div className="relative">
           <Button variant="outline">업무</Button>
-          <Badge variant="warning" className="absolute -top-2 -right-2 h-6 w-6 flex items-center justify-center p-0 text-xs">
+          <Badge variant="secondary" className="absolute -top-2 -right-2 h-6 w-6 flex items-center justify-center p-0 text-xs">
             99+
           </Badge>
         </div>
@@ -180,9 +138,9 @@ export const NumberBadges: Story = {
 
       <div className="flex gap-2">
         <Badge variant="destructive">new</Badge>
-        <Badge variant="success">hot</Badge>
-        <Badge variant="info">beta</Badge>
-        <Badge variant="warning">sale</Badge>
+        <Badge variant="default">hot</Badge>
+        <Badge variant="outline">beta</Badge>
+        <Badge variant="secondary">sale</Badge>
       </div>
     </div>
   ),
@@ -194,11 +152,11 @@ export const StatusBadges: Story = {
     <div className="space-y-4 w-full max-w-md">
       <div className="flex items-center justify-between p-3 border rounded-lg">
         <span>서버 상태</span>
-        <Badge variant="success">온라인</Badge>
+        <Badge variant="default">온라인</Badge>
       </div>
       <div className="flex items-center justify-between p-3 border rounded-lg">
         <span>배포 상태</span>
-        <Badge variant="warning">진행중</Badge>
+        <Badge variant="secondary">진행중</Badge>
       </div>
       <div className="flex items-center justify-between p-3 border rounded-lg">
         <span>테스트 결과</span>
@@ -206,7 +164,7 @@ export const StatusBadges: Story = {
       </div>
       <div className="flex items-center justify-between p-3 border rounded-lg">
         <span>코드 리뷰</span>
-        <Badge variant="info">대기</Badge>
+        <Badge variant="outline">대기</Badge>
       </div>
       <div className="flex items-center justify-between p-3 border rounded-lg">
         <span>문서 상태</span>
@@ -223,15 +181,15 @@ export const TagBadges: Story = {
       <div>
         <Typography variant="h6" className="mb-2">프로젝트 태그</Typography>
         <div className="flex flex-wrap gap-2">
-          <Badge variant="accent" className="flex items-center gap-1">
+          <Badge variant="default" className="flex items-center gap-1">
             <Tag className="h-3 w-3" />
             React
           </Badge>
-          <Badge variant="info" className="flex items-center gap-1">
+          <Badge variant="outline" className="flex items-center gap-1">
             <Tag className="h-3 w-3" />
             TypeScript
           </Badge>
-          <Badge variant="success" className="flex items-center gap-1">
+          <Badge variant="default" className="flex items-center gap-1">
             <Tag className="h-3 w-3" />
             Storybook
           </Badge>
@@ -246,8 +204,8 @@ export const TagBadges: Story = {
         <Typography variant="h6" className="mb-2">우선순위</Typography>
         <div className="flex gap-2">
           <Badge variant="destructive" size="sm">높음</Badge>
-          <Badge variant="warning" size="sm">보통</Badge>
-          <Badge variant="minor" size="sm">낮음</Badge>
+          <Badge variant="secondary" size="sm">보통</Badge>
+          <Badge variant="secondary" size="sm">낮음</Badge>
         </div>
       </div>
 
@@ -285,14 +243,12 @@ export const AllVariants: Story = {
         </div>
 
         <div className="space-y-3">
-          <Typography variant="h6">Spotlite 커스텀</Typography>
+          <Typography variant="h6">기본 Variant</Typography>
           <div className="space-y-2">
-            <Badge variant="success">Success</Badge>
-            <Badge variant="warning">Warning</Badge>
-            <Badge variant="info">Info</Badge>
-            <Badge variant="accent">Accent</Badge>
-            <Badge variant="minor">Minor</Badge>
-            <Badge variant="negative">Negative</Badge>
+            <Badge variant="default">Default</Badge>
+            <Badge variant="secondary">Secondary</Badge>
+            <Badge variant="destructive">Destructive</Badge>
+            <Badge variant="outline">Outline</Badge>
           </div>
         </div>
       </div>
@@ -300,9 +256,9 @@ export const AllVariants: Story = {
       <div className="space-y-3">
         <Typography variant="h6">크기 비교</Typography>
         <div className="flex items-center gap-4">
-          <Badge variant="info" size="sm">Small</Badge>
-          <Badge variant="info" size="default">Default</Badge>
-          <Badge variant="info" size="lg">Large</Badge>
+          <Badge variant="outline" size="sm">Small</Badge>
+          <Badge variant="outline" size="default">Default</Badge>
+          <Badge variant="outline" size="lg">Large</Badge>
         </div>
       </div>
     </div>
@@ -325,7 +281,7 @@ export const PracticalExamples: Story = {
             <div>
               <div className="flex items-center gap-2">
                 <Typography variant="h6">김개발</Typography>
-                <Badge variant="success" size="sm">
+                <Badge variant="default" size="sm">
                   <CheckCircle2 className="h-3 w-3 mr-1" />
                   인증됨
                 </Badge>
@@ -336,9 +292,9 @@ export const PracticalExamples: Story = {
             </div>
           </div>
           <div className="flex gap-2">
-            <Badge variant="accent" size="sm">Pro</Badge>
-            <Badge variant="info" size="sm">팀 리더</Badge>
-            <Badge variant="minor" size="sm">5년 경력</Badge>
+            <Badge variant="default" size="sm">Pro</Badge>
+            <Badge variant="outline" size="sm">팀 리더</Badge>
+            <Badge variant="secondary" size="sm">5년 경력</Badge>
           </div>
         </div>
 
@@ -346,9 +302,9 @@ export const PracticalExamples: Story = {
         <div className="space-y-2">
           <Typography variant="h6">파일 목록</Typography>
           {[
-            { name: 'components.tsx', status: 'success', label: '완료' },
-            { name: 'utils.ts', status: 'warning', label: '수정중' },
-            { name: 'types.d.ts', status: 'info', label: '리뷰중' },
+            { name: 'components.tsx', status: 'default', label: '완료' },
+            { name: 'utils.ts', status: 'secondary', label: '수정중' },
+            { name: 'types.d.ts', status: 'outline', label: '리뷰중' },
             { name: 'api.ts', status: 'destructive', label: '오류' },
           ].map((file, index) => (
             <div key={index} className="flex items-center justify-between p-3 border rounded">
@@ -365,7 +321,7 @@ export const PracticalExamples: Story = {
           <div className="p-4 border rounded-lg">
             <div className="flex items-center justify-between mb-2">
               <Typography variant="h6">활성 사용자</Typography>
-              <Badge variant="success" className="flex items-center gap-1">
+              <Badge variant="default" className="flex items-center gap-1">
                 <Users className="h-3 w-3" />
                 1,234
               </Badge>
@@ -378,7 +334,7 @@ export const PracticalExamples: Story = {
           <div className="p-4 border rounded-lg">
             <div className="flex items-center justify-between mb-2">
               <Typography variant="h6">이벤트</Typography>
-              <Badge variant="warning" className="flex items-center gap-1">
+              <Badge variant="secondary" className="flex items-center gap-1">
                 <Calendar className="h-3 w-3" />
                 3개
               </Badge>
@@ -416,15 +372,15 @@ export const ChipLikeFeatures: Story = {
         <div>
           <Typography variant="h6" className="mb-2">Chip 스타일 구현</Typography>
           <div className="flex flex-wrap gap-2">
-            <Badge variant="accent" className="rounded-full">
+            <Badge variant="default" className="rounded-full">
               <Zap className="h-3 w-3 mr-1" />
-              Accent Chip
+              Default Chip
             </Badge>
-            <Badge variant="minor" className="rounded-full">
-              Minor Chip
+            <Badge variant="secondary" className="rounded-full">
+              Secondary Chip
             </Badge>
-            <Badge variant="negative" className="rounded-full">
-              Negative Chip
+            <Badge variant="destructive" className="rounded-full">
+              Destructive Chip
             </Badge>
           </div>
         </div>
@@ -436,11 +392,11 @@ export const ChipLikeFeatures: Story = {
               React
               <X className="h-3 w-3 cursor-pointer hover:bg-gray-200 rounded" />
             </Badge>
-            <Badge variant="info" className="flex items-center gap-1 pr-1">
+            <Badge variant="outline" className="flex items-center gap-1 pr-1">
               TypeScript
               <X className="h-3 w-3 cursor-pointer hover:bg-blue-200 rounded" />
             </Badge>
-            <Badge variant="success" className="flex items-center gap-1 pr-1">
+            <Badge variant="default" className="flex items-center gap-1 pr-1">
               Storybook
               <X className="h-3 w-3 cursor-pointer hover:bg-green-200 rounded" />
             </Badge>

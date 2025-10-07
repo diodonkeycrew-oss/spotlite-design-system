@@ -847,7 +847,7 @@ theme.components = {
     },
     variants: [
       {
-        props: { size: "large" },
+        props: { variant: "circular", size: "large" },
         style: {
           width: 80,
           height: 80,

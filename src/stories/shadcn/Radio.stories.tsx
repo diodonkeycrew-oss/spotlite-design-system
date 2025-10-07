@@ -19,10 +19,6 @@ const meta: Meta<typeof RadioGroup> = {
       control: { type: 'select' },
       options: [
         'default',
-        'accent',
-        'negative',
-        'line',
-        'minor',
       ],
       description: 'Radio variant',
     },
@@ -80,62 +76,6 @@ export const Variants: Story = {
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="default2" variant="default" />
             <Label htmlFor="default2">Default 2</Label>
-          </div>
-        </RadioGroup>
-      </div>
-
-      <div className="space-y-2">
-        <Label>Accent</Label>
-        <RadioGroup defaultValue="accent1">
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="accent1" variant="accent" />
-            <Label htmlFor="accent1">Accent 1</Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="accent2" variant="accent" />
-            <Label htmlFor="accent2">Accent 2</Label>
-          </div>
-        </RadioGroup>
-      </div>
-
-      <div className="space-y-2">
-        <Label>Negative</Label>
-        <RadioGroup defaultValue="negative1">
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="negative1" variant="negative" />
-            <Label htmlFor="negative1">Negative 1</Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="negative2" variant="negative" />
-            <Label htmlFor="negative2">Negative 2</Label>
-          </div>
-        </RadioGroup>
-      </div>
-
-      <div className="space-y-2">
-        <Label>Line</Label>
-        <RadioGroup defaultValue="line1">
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="line1" variant="line" />
-            <Label htmlFor="line1">Line 1</Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="line2" variant="line" />
-            <Label htmlFor="line2">Line 2</Label>
-          </div>
-        </RadioGroup>
-      </div>
-
-      <div className="space-y-2">
-        <Label>Minor</Label>
-        <RadioGroup defaultValue="minor1">
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="minor1" variant="minor" />
-            <Label htmlFor="minor1">Minor 1</Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="minor2" variant="minor" />
-            <Label htmlFor="minor2">Minor 2</Label>
           </div>
         </RadioGroup>
       </div>
@@ -323,19 +263,19 @@ export const Examples: Story = {
         <Label>결제 방법 선택</Label>
         <RadioGroup defaultValue="card">
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="card" variant="accent" />
+            <RadioGroupItem value="card" variant="default" />
             <Label htmlFor="card">신용카드</Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="bank" variant="accent" />
+            <RadioGroupItem value="bank" variant="default" />
             <Label htmlFor="bank">계좌이체</Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="kakao" variant="accent" />
+            <RadioGroupItem value="kakao" variant="default" />
             <Label htmlFor="kakao">카카오페이</Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="naver" variant="accent" />
+            <RadioGroupItem value="naver" variant="default" />
             <Label htmlFor="naver">네이버페이</Label>
           </div>
         </RadioGroup>
@@ -345,15 +285,15 @@ export const Examples: Story = {
         <Label>알림 설정</Label>
         <RadioGroup defaultValue="all">
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="all" variant="line" />
+            <RadioGroupItem value="all" variant="default" />
             <Label htmlFor="all">모든 알림 받기</Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="important" variant="line" />
+            <RadioGroupItem value="important" variant="default" />
             <Label htmlFor="important">중요한 알림만</Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="none" variant="line" />
+            <RadioGroupItem value="none" variant="default" />
             <Label htmlFor="none">알림 받지 않기</Label>
           </div>
         </RadioGroup>

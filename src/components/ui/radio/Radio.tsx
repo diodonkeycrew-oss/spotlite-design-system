@@ -12,10 +12,6 @@ const radioVariants = cva(
     variants: {
       variant: {
         default: "border-gray-300 text-primary",
-        accent: "border-blue-600 text-blue-600",
-        negative: "border-red-500 text-red-500",
-        line: "border-green-600 text-green-600",
-        minor: "border-gray-300 text-gray-500",
       },
       size: {
         default: "h-4 w-4",

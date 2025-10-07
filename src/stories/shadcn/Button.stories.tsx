@@ -16,7 +16,7 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link', 'spotlite', 'spotliteLogin', 'line', 'lineDisconnect', 'search', 'searchSelected', 'option', 'optionSelected'],
+      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link', 'spotlite', 'spotliteLogin'],
       description: '버튼의 스타일 variant',
     },
     size: {
@@ -92,47 +92,6 @@ export const SpotliteLogin: Story = {
   },
 };
 
-export const Line: Story = {
-  args: {
-    variant: 'line',
-    children: 'Line Connect',
-  },
-};
-
-export const LineDisconnect: Story = {
-  args: {
-    variant: 'lineDisconnect',
-    children: 'Line Disconnect',
-  },
-};
-
-export const Search: Story = {
-  args: {
-    variant: 'search',
-    children: 'Search',
-  },
-};
-
-export const SearchSelected: Story = {
-  args: {
-    variant: 'searchSelected',
-    children: 'Search Selected',
-  },
-};
-
-export const Option: Story = {
-  args: {
-    variant: 'option',
-    children: 'Option',
-  },
-};
-
-export const OptionSelected: Story = {
-  args: {
-    variant: 'optionSelected',
-    children: 'Option Selected',
-  },
-};
 
 // 크기별 버튼들
 export const Small: Story = {

@@ -4,6 +4,10 @@
 export { Button, buttonVariants } from './button'
 export type { ButtonProps, ButtonVariantProps, ButtonVariant, ButtonSize } from './button'
 
+// AccountButton 관련
+export { AccountButton, accountButtonVariants } from './account-button'
+export type { AccountButtonVariant, AccountButtonSize } from './account-button'
+
 // Typography 관련  
 export { Typography, typographyVariants } from './typography'
 export type { TypographyProps, TypographyVariantProps } from './typography'

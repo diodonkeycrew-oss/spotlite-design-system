@@ -10,12 +10,6 @@ export type ButtonVariant =
   // Spotlite 커스텀 variants
   | "spotlite"
   | "spotliteLogin"
-  | "line"
-  | "lineDisconnect"
-  | "search"
-  | "searchSelected"
-  | "option"
-  | "optionSelected"
 
 export type ButtonSize =
   // 기본 shadcn sizes

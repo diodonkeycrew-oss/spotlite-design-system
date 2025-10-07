@@ -21,15 +21,9 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
 
-        // Spotlite 커스텀 variants (MUI 컬러와 variant만 매칭, 기본 스타일은 shadcn)
+        // Spotlite 커스텀 variants
         spotlite: "bg-primary text-primary-foreground hover:bg-primary/90",
         spotliteLogin: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        line: "bg-green-500 text-white hover:bg-green-600",
-        lineDisconnect: "border border-green-500 text-green-500 hover:bg-green-50",
-        search: "bg-gray-100 text-gray-700 hover:bg-gray-200",
-        searchSelected: "bg-blue-100 text-blue-700 border border-blue-300",
-        option: "border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 rounded-full",
-        optionSelected: "bg-blue-500 text-white border border-blue-500 rounded-full",
       } as const,
       size: {
         default: "h-10 px-4 py-2",
