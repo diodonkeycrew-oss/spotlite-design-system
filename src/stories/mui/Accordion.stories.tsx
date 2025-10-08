@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import {
   Accordion,
-  AccordionContent,
-  AccordionItem,
   AccordionSummary,
   AccordionDetails,
 } from '@mui/material'

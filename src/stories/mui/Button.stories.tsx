@@ -6,11 +6,6 @@ const meta: Meta<typeof Button> = {
   component: Button,
   parameters: {
     layout: 'centered',
-    docs: {
-      description: {
-        component: 'Spotlite 디자인 시스템의 Material-UI Button 컴포넌트입니다. 커스텀 variant와 color 옵션을 제공합니다.',
-      },
-    },
   },
   tags: ['autodocs'],
   argTypes: {

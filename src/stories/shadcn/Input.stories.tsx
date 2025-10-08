@@ -8,25 +8,148 @@ const meta: Meta<typeof Input> = {
   component: Input,
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: `# Input
+
+Input components allow users to enter and edit text. They are essential for forms, search functionality, and data entry.
+
+## Basic Input
+
+The Input component provides a clean, accessible text input field with various states and configurations.
+
+### Input Types
+
+#### Text Input
+- **Purpose**: General text entry
+- **Usage**: Names, descriptions, general content
+- **Features**: Standard text input with placeholder support
+
+#### Email Input
+- **Purpose**: Email address collection
+- **Usage**: Login forms, contact forms, user registration
+- **Features**: Built-in email validation, mobile keyboard optimization
+
+#### Password Input
+- **Purpose**: Secure password entry
+- **Usage**: Login forms, account creation, password changes
+- **Features**: Text masking, show/hide toggle functionality
+
+#### Number Input
+- **Purpose**: Numeric data entry
+- **Usage**: Quantities, prices, measurements, phone numbers
+- **Features**: Numeric keyboard on mobile, validation support
+
+#### Tel Input
+- **Purpose**: Phone number entry
+- **Usage**: Contact forms, user profiles, verification
+- **Features**: Phone number keyboard on mobile, formatting support
+
+#### URL Input
+- **Purpose**: Web address entry
+- **Usage**: Website links, social media profiles
+- **Features**: URL validation, protocol suggestions
+
+### Sizes
+
+- **small**: Compact inputs for dense interfaces
+- **medium**: Standard input size for most use cases
+- **large**: Larger inputs for emphasis or accessibility
+
+### States
+
+#### Default State
+- **Purpose**: Normal interactive input
+- **Visual**: Standard border and background
+- **Usage**: Most input scenarios
+
+#### Error State
+- **Purpose**: Indicate validation errors
+- **Visual**: Red border and error styling
+- **Usage**: Form validation, user feedback
+
+#### Disabled State
+- **Purpose**: Non-interactive inputs
+- **Visual**: Muted colors and disabled cursor
+- **Usage**: Read-only data, conditional inputs
+
+### Icon Support
+
+#### Start Icon
+- **Purpose**: Visual context for input purpose
+- **Usage**: Search inputs, category selection, visual cues
+- **Examples**: Search icon, user icon, category icons
+
+#### End Icon
+- **Purpose**: Action buttons or status indicators
+- **Usage**: Password visibility toggle, clear button, status icons
+- **Examples**: Eye icon for password, X for clear, check for valid
+
+### Form Integration
+
+#### With Label
+- **Purpose**: Clear input identification
+- **Usage**: All form inputs should have descriptive labels
+- **Accessibility**: Improves screen reader support
+
+#### With Helper Text
+- **Purpose**: Provide additional context or instructions
+- **Usage**: Complex inputs, validation hints, format examples
+- **Examples**: "Password must be 8+ characters", "Enter your full name"
+
+#### Required Fields
+- **Purpose**: Indicate mandatory inputs
+- **Usage**: Form validation, user guidance
+- **Visual**: Asterisk (*) or "Required" indicator
+
+### Accessibility Features
+
+- **Keyboard Navigation**: Full keyboard support
+- **Screen Reader Support**: Proper ARIA labels and descriptions
+- **Focus Management**: Clear focus indicators
+- **Error Announcements**: Screen reader error feedback
+- **Label Association**: Proper label-input relationships
+
+### Best Practices
+
+1. **Always use labels** for form accessibility
+2. **Provide clear placeholder text** that describes expected input
+3. **Use appropriate input types** for better mobile experience
+4. **Include validation feedback** for user guidance
+5. **Group related inputs** logically in forms
+6. **Use helper text** for complex or specific requirements`,
+      },
+      source: {
+        type: 'code',
+        language: 'tsx',
+        format: true,
+      },
+    },
   },
+  tags: ['autodocs'],
   argTypes: {
     variant: {
       control: { type: 'select' },
       options: ['default'],
+      description: 'Input의 스타일 variant',
     },
     size: {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
+      description: 'Input의 크기',
     },
     error: {
       control: { type: 'boolean' },
+      description: '에러 상태 여부',
     },
     disabled: {
       control: { type: 'boolean' },
+      description: '비활성화 상태 여부',
     },
     type: {
       control: { type: 'select' },
       options: ['text', 'email', 'password', 'number', 'tel', 'url'],
+      description: 'Input 타입',
     },
   },
 }

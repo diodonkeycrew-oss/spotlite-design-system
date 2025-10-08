@@ -8,10 +8,10 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from '@/components/ui/toast';
-import { Button } from '@/components/ui/button';
-import { Typography } from '@/components/ui/typography';
-import { Badge } from '@/components/ui/badge';
+} from '../../components/ui/toast';
+import { Button } from '../../components/ui/button';
+import { Typography } from '../../components/ui/typography';
+import { Badge } from '../../components/ui/badge';
 import {
   CheckCircle2,
   AlertCircle,

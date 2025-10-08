@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { Slider } from '@/components/ui/slider';
-import { Typography } from '@/components/ui/typography';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { Slider } from '../../components/ui/slider';
+import { Typography } from '../../components/ui/typography';
+import { Button } from '../../components/ui/button';
+import { Badge } from '../../components/ui/badge';
 import { Volume2, VolumeX, Settings, Brightness4 } from 'lucide-react';
 
 const meta: Meta<typeof Slider> = {

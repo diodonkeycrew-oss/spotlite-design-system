@@ -4,10 +4,10 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/ui/tooltip';
-import { Button } from '@/components/ui/button';
-import { Typography } from '@/components/ui/typography';
-import { Badge } from '@/components/ui/badge';
+} from '../../components/ui/tooltip';
+import { Button } from '../../components/ui/button';
+import { Typography } from '../../components/ui/typography';
+import { Badge } from '../../components/ui/badge';
 import {
   Info,
   HelpCircle,

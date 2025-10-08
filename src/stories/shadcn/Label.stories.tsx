@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import { Typography } from '@/components/ui/typography';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio';
+import { Label } from '../../components/ui/label';
+import { Input } from '../../components/ui/input';
+import { Typography } from '../../components/ui/typography';
+import { Button } from '../../components/ui/button';
+import { Badge } from '../../components/ui/badge';
+import { RadioGroup, RadioGroupItem } from '../../components/ui/radio';
 import { HelpCircle, AlertCircle } from 'lucide-react';
 
 const meta: Meta<typeof Label> = {

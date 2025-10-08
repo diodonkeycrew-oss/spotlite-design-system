@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Typography } from '@/components/ui/typography';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { Alert, AlertDescription, AlertTitle } from '../../components/ui/alert';
+import { Typography } from '../../components/ui/typography';
+import { Button } from '../../components/ui/button';
+import { Badge } from '../../components/ui/badge';
 import {
   AlertCircle,
   CheckCircle2,

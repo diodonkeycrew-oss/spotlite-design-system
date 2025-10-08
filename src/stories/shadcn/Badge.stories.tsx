@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Badge } from '@/components/ui/badge';
-import { Typography } from '@/components/ui/typography';
-import { Button } from '@/components/ui/button';
+import { Badge } from '../../components/ui/badge';
+import { Typography } from '../../components/ui/typography';
+import { Button } from '../../components/ui/button';
 import {
   X,
   Star,
@@ -22,6 +22,11 @@ const meta: Meta<typeof Badge> = {
     docs: {
       description: {
         component: 'Spotlite 디자인 시스템의 shadcn/ui Badge 컴포넌트입니다. MUI Chip과 유사한 기능을 제공하며, 다양한 variant와 크기를 지원합니다.',
+      },
+      source: {
+        type: 'code',
+        language: 'tsx',
+        format: true,
       },
     },
   },
